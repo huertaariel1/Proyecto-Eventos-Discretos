@@ -19,6 +19,13 @@ class Evolving_Population:
         self.t = 0
         self.event_count = 0
         self.T = 1200
+        self.death_count = 0
+        self.want_a_partner_count = 0
+        self.establish_couple_count = 0
+        self.breakup_count = 0
+        self.get_pregnant_count = 0
+        self.giving_birth_count = 0
+        self.lonely_time_over_count = 0
         
         population = []
         for i in range(M + H):
@@ -302,6 +309,15 @@ class Evolving_Population:
         print("---------------------------------------------------------------------------------------------")
         print()
         print()
+        print("------------------------- Count of death events: ",self.death_count, "    -------------------------------------" )
+        print("------------------------- Count of want a partner events: ",self.want_a_partner_count, "    -------------------------------------" )
+        print("------------------------- Count of establish couple events: ",self.establish_couple_count, "    -------------------------------------" )
+        print("------------------------- Count of get pregnant events: ",self.get_pregnant_count, "    -------------------------------------" )
+        print("------------------------- Count of giving birth events: ",self.giving_birth_count, "    -------------------------------------" )
+        print("------------------------- Count of breakup events: ",self.breakup_count, "    -------------------------------------" )
+        print("------------------------- Count of lonely time over events: ",self.lonely_time_over_count, "    -------------------------------------" )
+        print()
+        print()
 
     def add_event(self, event_name, event_time, person_list):
         if event_time > self.T:
@@ -333,30 +349,39 @@ class Evolving_Population:
                 self.t = event.time
                 for person in self.population:
                     person.month_goes_by(time_passed)
+                self.print_terminal(event.name)
             
             if event.name == "death_event":
                 self.death_event(event.list[0])
-                self.print_terminal(event.name)
+                self.death_count += 1
+                #self.print_terminal(event.name)
             elif event.name == "want_a_partner_event":
                 self.want_a_partner_event(event.list[0])
+                self.want_a_partner_count += 1
             elif event.name == "establish_couple_event":
                 self.establish_couple_event(event.list[0], event.list[1])
-                self.print_terminal(event.name)
+                self.establish_couple_count += 1
+                #self.print_terminal(event.name)
             elif event.name == "get_pregnant_event":
                 self.get_pregnant_event(event.list[0], event.list[1])
+                self.get_pregnant_count += 1
                 #self.print_terminal(event.name)
             elif event.name == "breakup_event":
                 self.breakup_event(event.list[0], event.list[1])
+                self.breakup_count += 1
                 #self.print_terminal(event.name)
             elif event.name == "widow_event":
                 self.widow_event(event.list[0])
+                self.breakup_count += 1
                 #self.print_terminal(event.name)
             elif event.name == "lonely_time_over_event":
                 self.lonely_time_over_event(event.list[0])
+                self.lonely_time_over_count += 1
                 #self.print_terminal(event.name)
             else:
                 self.giving_birth_event(event.list[0], event.list[1])
-                self.print_terminal(event.name)
+                self.giving_birth_count += 1
+                #self.print_terminal(event.name)
                 
             
 
