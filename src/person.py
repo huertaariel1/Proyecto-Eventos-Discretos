@@ -11,6 +11,8 @@ class Person:
         self.is_dead = False
         self.want_partner_age = []
         self.max_children_number = 0
+        self.next_range_wp_event = False
+        self.next_range_p_event = False
 
     def month_goes_by(self, months):
         self.until_birthday = self.until_birthday + months
