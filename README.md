@@ -14,19 +14,23 @@ Cada vez que ocurre un evento que cambia el mes actual, se imprime en la consola
 
 > ------------------------- Event: " " -------------------------------------
 
-
 > ------------------------- Total number of people: " " --------------------
 
 > ------------------------- Total number of men: " "    --------------------
+
 > ------------------------- Total number of women: " "  --------------------
-> --------------------------------------------------------------------------
-        
-        
+               
 > ------------------------- Count of death events: " "    ------------------
+
 > ------------------------- Count of want a partner events: " "    ---------
+
 > ------------------------- Count of establish couple events: " "    -------
+
 > ------------------------- Count of get pregnant events: " "    -----------
+
 > ------------------------- Count of giving birth events: " "    -----------
+
 > ------------------------- Count of breakup events: " "    ----------------
+
 > ------------------------- Count of lonely time over events: " "    -------
 
